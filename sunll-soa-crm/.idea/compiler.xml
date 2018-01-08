@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-quartz-web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-quartz-web" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-clue-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-clue-service" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-systemset-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-systemset-service" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-clue-web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-clue-web" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-clue-entity" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-clue-entity" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-common" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-common" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-quartz-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-quartz-service" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-quartz-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-quartz-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-crm-web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-crm-web" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-quartz-entity" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-quartz-entity" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-systemset-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-systemset-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-clue-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-clue-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for fastdfs-client" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="fastdfs-client" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-systemset-web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-systemset-web" />
+      </profile>
+      <profile default="false" name="Annotation profile for sunll-systemset-entity" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sunll-systemset-entity" />
+      </profile>
+      <profile default="false" name="Annotation profile for mybatise-generator" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="mybatise-generator" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fastdfs-client" target="1.8" />
+      <module name="mybatise-generator" target="1.7" />
+      <module name="sunll-clue-api" target="1.8" />
+      <module name="sunll-clue-entity" target="1.8" />
+      <module name="sunll-clue-service" target="1.8" />
+      <module name="sunll-clue-web" target="1.8" />
+      <module name="sunll-common" target="1.8" />
+      <module name="sunll-crm-clue" target="1.5" />
+      <module name="sunll-crm-quartz" target="1.5" />
+      <module name="sunll-crm-systemset" target="1.5" />
+      <module name="sunll-crm-web" target="1.8" />
+      <module name="sunll-quartz-api" target="1.8" />
+      <module name="sunll-quartz-entity" target="1.8" />
+      <module name="sunll-quartz-service" target="1.8" />
+      <module name="sunll-quartz-web" target="1.8" />
+      <module name="sunll-soa-crm" target="1.5" />
+      <module name="sunll-systemset-api" target="1.8" />
+      <module name="sunll-systemset-entity" target="1.8" />
+      <module name="sunll-systemset-service" target="1.8" />
+      <module name="sunll-systemset-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

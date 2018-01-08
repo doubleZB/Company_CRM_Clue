@@ -1,0 +1,93 @@
+body,html{
+	width:100%;
+	height:100%;
+}
+.wrap{
+	width:100%;
+	height:100%;
+	background: url(../images/registerbg.png) no-repeat;
+	background-size:100% ;
+}
+.head{
+	height:38px;
+	line-height: 38px;
+	text-align: center;
+	padding:50px 30px;
+}
+.head > img{
+	height: 100%;
+	padding-right:15px;
+}
+.head > span{
+	position: relative;
+	top:-15px;
+	color:#fff;
+	font-size: 14px;
+}
+.padding{
+	padding:0 15px;
+}
+.main{
+	width:500px;
+	height:420px;
+	margin: 0 auto;
+	background: #fff;
+	box-shadow: 0 0 10px 0 #eee;
+	box-sizing: border-box;
+	padding:15px 25px ;
+	border-radius: 5px;
+}
+h3{
+	text-align: center;
+	font-size: 18px;
+	color:#fe641c;
+	font-weight: bold;
+	line-height: 40px;
+}
+.ipt{
+	line-height: 40px;
+	height:40px;
+	margin-top:15px;
+	border-bottom:1px solid #e6e6e6;
+	position: relative;
+}
+.ipt > input{
+	width:calc(100% - 120px);
+	line-height: 38px;
+	height:38px;
+	border:none;
+	outline: none;
+	font-size: 14px;
+	box-sizing: border-box;
+	padding-left:70px;
+}
+.title{
+	width:60px;
+	font-size: 16px;
+	display: inline-block;
+	font-size: 14px;
+	text-align-last: justify; 
+}
+.tipTxt{
+	line-height: 18px;
+	text-align: center;
+	color:red;
+}
+.registerBtn{
+	width:94%;
+	margin:50px auto;
+	text-align: center;
+	cursor: pointer;
+	line-height: 40px;
+	height:40px;
+	border-radius: 5px;
+	color:#fff;
+	background: #fe641c;
+	font-size: 16px;
+}
+.footer{
+	text-align: center;
+	line-height: 80px;
+	color:#999999;
+	clear: both;
+}

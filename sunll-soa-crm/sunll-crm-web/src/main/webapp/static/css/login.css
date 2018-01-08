@@ -1,0 +1,164 @@
+body,html{
+	width:100%;
+	height:100%;
+}
+.head{
+	height:60px;
+	line-height: 60px;
+	background: #fafafa;
+}
+.head > img{
+	height: 100%;
+	float:left;
+}
+.head > span{
+	float:left;
+}
+.padding{
+	padding:0 15px;
+}
+.main{
+	width:100%;
+	height:calc(100% - 130px);
+	background: url(../images/loginBg1.png);
+	background-size: 100% 100%;
+	position: relative;
+}
+.login{
+	position: absolute;
+	width:400px;
+	height:320px;
+	padding:10px 20px;
+	box-sizing: border-box;
+	background: #fff;
+	right:100px;
+	top:calc(50% - 160px);
+	border-radius: 5px;
+}
+.nav > li{
+	float:left;
+	width:50%;
+	text-align: center;
+	line-height: 40px;
+	color:#999999;
+	border-bottom:3px solid #999999;
+	cursor: pointer;
+}
+.nav > li:nth-of-type(2){
+	color:#fe641c;
+	border-bottom:3px solid #fe641c;
+}
+/*扫码登录*/
+.nav > li:nth-of-type(1){
+	display:none ;
+}
+.nav > li:nth-of-type(2){
+	width:100%;
+}
+/*扫码登录*/
+.footer{
+	height:70px;
+	line-height: 70px;
+	text-align: center;
+	color:#bbbbbb;
+}
+.content{
+	clear: both;
+}
+.content > div:nth-of-type(1){
+	display: none;
+}
+.content > div{
+	clear:both;
+	padding-top:1px;
+}
+.ipt{
+	line-height: 40px;
+	height:40px;
+	margin-top:15px;
+	border-bottom:1px solid #e6e6e6;
+}
+.ipt > input{
+	width:calc(100% - 50px);
+	line-height: 38px;
+	height:38px;
+	border:none;
+	outline: none;
+}
+.nextLogin{
+	width:100%;
+	height:40px;
+	text-align: center;
+	line-height: 40px;
+	color:#fff;
+	background: #fe641c;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 20px 0 5px 0;
+}
+.Apply{
+	text-align: center;
+	margin:20px;
+	text-decoration: underline;
+	display: block;
+	color:#2c8ff4;
+}
+.forget{
+	color:#fe7138;
+	text-decoration: underline;
+}
+.forget:hover{
+	color:#fe7138;
+	text-decoration: underline;
+}
+.Apply:hover{
+	text-decoration: underline;
+	color:#2c8ff4;
+}
+.fa{
+	width:40px;
+	font-size: 16px;
+	text-align: center;
+}
+.remember{
+	padding:0 10px ;
+	line-height: 50px;
+	height:40px
+}
+input[type=checkbox] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    -webkit-appearance: none;
+    background-image: transparent;
+    margin-right: 3px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right:10px;
+    margin-top:-2px;
+}
+
+input[type=checkbox]:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+	background-image: url("../images/checkN.png");
+    background-size: 100% 100%;
+    border: 0;
+    background-color: transparent;
+}
+
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+
+	background-image: url("../images/checkY1.png");
+    background-size: 100% 100%;
+    border: 0;
+    background-color: transparent;
+}

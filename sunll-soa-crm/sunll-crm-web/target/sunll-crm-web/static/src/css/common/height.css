@@ -1,0 +1,66 @@
+/* 表格部分 */
+.main {
+    height: calc(100% - 150px);
+    background-color: #fff;
+}
+
+.main-content-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.main-content-wrap .main-table-wrap {
+    width: 100%;
+    position: absolute;
+    top: 50px;
+}
+
+.fh-breadcrumb {
+    height: calc(100% - 130px);
+    margin: 0;
+}
+
+.operate-wrap {
+    height: calc(100% - 34px);
+    background-color: #fff;
+}
+
+/* todo: 线索页面的获取的高度*/
+.clue .main-content-wrap {
+    height: calc(100% - 34px);
+}
+
+/* todo: 短信页面的获取的高度*/
+.mms .main-content-wrap {
+    height: calc(100% - 2px);
+}
+
+/* todo: 短信页面的获取的高度*/
+.statistic .main-content-wrap {
+    height: calc(100% - 2px);
+}
+
+.statistic .fh-breadcrumb {
+    height: calc(100% - 124px);
+}
+
+.clue .main-content-wrap .main-table-wrap {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+}
+
+/* 操作弹窗 */
+.clue .operate-wrap {
+    height: calc(100% - 1px);
+}
+
+/* todo： 操作弹窗外层 */
+.clue .operate-wrap .fh-breadcrumb {
+    height: calc(100% - 130px);
+    margin: 0;
+}
+
+.clue .operate-wrap table.operate-table {
+    max-height: calc(100% - 74px - 57px);
+}

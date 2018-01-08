@@ -1,0 +1,21 @@
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+[v-cloak] {
+    display: none;
+}
+.cursor{
+	cursor: pointer;
+}
+.clear{
+	clear: both;
+}
+.overf{
+	overflow: hidden;
+}
+.posiR{
+	position: relative;
+}

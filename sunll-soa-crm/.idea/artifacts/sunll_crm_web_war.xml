@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sunll-crm-web:war">
+    <output-path>$PROJECT_DIR$/sunll-crm-web/target</output-path>
+    <root id="archive" name="sunll-crm-web.war">
+      <element id="artifact" artifact-name="sunll-crm-web:war exploded" />
+    </root>
+  </artifact>
+</component>

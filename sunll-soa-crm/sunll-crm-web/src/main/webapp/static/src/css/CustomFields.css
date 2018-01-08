@@ -1,0 +1,105 @@
+body {
+  background: #fff;
+}
+#BusinessType {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  background: #fff;
+  box-sizing: border-box;
+}
+.header_top {
+  height: 60px;
+  padding: 0 20px;
+  line-height: 60px;
+  border-bottom: 1px solid #eeeeee;
+}
+.header_top span {
+  color: #222222;
+  font-size: 18px;
+  float: left;
+}
+.ContentAll {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+.ContentAll .navList {
+  width: auto;
+  height: 70px;
+  line-height: 70px;
+  border-bottom: 1px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
+  box-sizing: border-box;
+}
+.ContentAll .navList div {
+  width: 100px;
+  font-size: 18px;
+  color: #666;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+.ContentAll .navList div .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 70%;
+  left: 15%;
+  height: 2px;
+  background: #5caaf2;
+}
+.ContentAll .content {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+}
+.ContentAll .content .table_box {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  margin-top: 0;
+  /*display: none;*/
+}
+.ContentAll .content .table_box table {
+  width: 100%;
+}
+.ContentAll .content .table_box table tr {
+  width: 100%;
+  background: #fbfbfb;
+  box-sizing: border-box;
+  border: 1px solid #f6f6f6;
+}
+.ContentAll .content .table_box table tr th {
+  width: 25%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+  float: left;
+  font-size: 16px;
+}
+.ContentAll .content .table_box table tr td {
+  width: 25%;
+  font-weight: 500;
+  color: #666;
+  font-size: 14px;
+  height: 60px;
+  line-height: 60px;
+  float: left;
+  text-align: center;
+}
+.ContentAll .content .table_box table tr td i {
+  padding: 0 8px;
+}
+.table_box tr:nth-child(2n-1) {
+  background: #fff!important;
+}
+.editShow {
+  top: 130px;
+}
+.active{
+
+  border-bottom: 1px solid #5caaf2;
+}

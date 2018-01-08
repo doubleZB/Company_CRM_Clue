@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunll.quartz.dao.sms.SmsMapper">
+  <resultMap id="BaseResultMap" type="com.sunll.quartz.entity.sms.Sms">
+    <!--          -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sms_text" jdbcType="VARCHAR" property="smsText" />
+    <result column="sms_date" jdbcType="TIMESTAMP" property="smsDate" />
+    <result column="business_id" jdbcType="INTEGER" property="businessId" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="specific_id" jdbcType="VARCHAR" property="specificId" />
+    <result column="sms_status" jdbcType="CHAR" property="smsStatus" />
+    <result column="show_status" jdbcType="CHAR" property="showStatus" />
+    <result column="fieldone" jdbcType="VARCHAR" property="fieldone" />
+    <result column="fieldtwo" jdbcType="VARCHAR" property="fieldtwo" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--          -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--          -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--          -->
+    id, sms_text, sms_date, business_id, type_id, specific_id, sms_status, show_status, 
+    fieldone, fieldtwo
+  </sql>
+  <select id="selectByExample" parameterType="com.sunll.quartz.entity.sms.SmsExample" resultMap="BaseResultMap">
+    <!--          -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sms
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--          -->
+    select 
+    <include refid="Base_Column_List" />
+    from sms
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--          -->
+    delete from sms
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sunll.quartz.entity.sms.SmsExample">
+    <!--          -->
+    delete from sms
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sunll.quartz.entity.sms.Sms">
+    <!--          -->
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms (sms_text, sms_date, business_id, 
+      type_id, specific_id, sms_status, 
+      show_status, fieldone, fieldtwo
+      )
+    values (#{smsText,jdbcType=VARCHAR}, #{smsDate,jdbcType=TIMESTAMP}, #{businessId,jdbcType=INTEGER}, 
+      #{typeId,jdbcType=INTEGER}, #{specificId,jdbcType=VARCHAR}, #{smsStatus,jdbcType=CHAR}, 
+      #{showStatus,jdbcType=CHAR}, #{fieldone,jdbcType=VARCHAR}, #{fieldtwo,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunll.quartz.entity.sms.Sms">
+    <!--          -->
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sms
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="smsText != null">
+        sms_text,
+      </if>
+      <if test="smsDate != null">
+        sms_date,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="specificId != null">
+        specific_id,
+      </if>
+      <if test="smsStatus != null">
+        sms_status,
+      </if>
+      <if test="showStatus != null">
+        show_status,
+      </if>
+      <if test="fieldone != null">
+        fieldone,
+      </if>
+      <if test="fieldtwo != null">
+        fieldtwo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="smsText != null">
+        #{smsText,jdbcType=VARCHAR},
+      </if>
+      <if test="smsDate != null">
+        #{smsDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="specificId != null">
+        #{specificId,jdbcType=VARCHAR},
+      </if>
+      <if test="smsStatus != null">
+        #{smsStatus,jdbcType=CHAR},
+      </if>
+      <if test="showStatus != null">
+        #{showStatus,jdbcType=CHAR},
+      </if>
+      <if test="fieldone != null">
+        #{fieldone,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldtwo != null">
+        #{fieldtwo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sunll.quartz.entity.sms.SmsExample" resultType="java.lang.Long">
+    <!--          -->
+    select count(*) from sms
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--          -->
+    update sms
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.smsText != null">
+        sms_text = #{record.smsText,jdbcType=VARCHAR},
+      </if>
+      <if test="record.smsDate != null">
+        sms_date = #{record.smsDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.businessId != null">
+        business_id = #{record.businessId,jdbcType=INTEGER},
+      </if>
+      <if test="record.typeId != null">
+        type_id = #{record.typeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.specificId != null">
+        specific_id = #{record.specificId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.smsStatus != null">
+        sms_status = #{record.smsStatus,jdbcType=CHAR},
+      </if>
+      <if test="record.showStatus != null">
+        show_status = #{record.showStatus,jdbcType=CHAR},
+      </if>
+      <if test="record.fieldone != null">
+        fieldone = #{record.fieldone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fieldtwo != null">
+        fieldtwo = #{record.fieldtwo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--          -->
+    update sms
+    set id = #{record.id,jdbcType=INTEGER},
+      sms_text = #{record.smsText,jdbcType=VARCHAR},
+      sms_date = #{record.smsDate,jdbcType=TIMESTAMP},
+      business_id = #{record.businessId,jdbcType=INTEGER},
+      type_id = #{record.typeId,jdbcType=INTEGER},
+      specific_id = #{record.specificId,jdbcType=VARCHAR},
+      sms_status = #{record.smsStatus,jdbcType=CHAR},
+      show_status = #{record.showStatus,jdbcType=CHAR},
+      fieldone = #{record.fieldone,jdbcType=VARCHAR},
+      fieldtwo = #{record.fieldtwo,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunll.quartz.entity.sms.Sms">
+    <!--          -->
+    update sms
+    <set>
+      <if test="smsText != null">
+        sms_text = #{smsText,jdbcType=VARCHAR},
+      </if>
+      <if test="smsDate != null">
+        sms_date = #{smsDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessId != null">
+        business_id = #{businessId,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="specificId != null">
+        specific_id = #{specificId,jdbcType=VARCHAR},
+      </if>
+      <if test="smsStatus != null">
+        sms_status = #{smsStatus,jdbcType=CHAR},
+      </if>
+      <if test="showStatus != null">
+        show_status = #{showStatus,jdbcType=CHAR},
+      </if>
+      <if test="fieldone != null">
+        fieldone = #{fieldone,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldtwo != null">
+        fieldtwo = #{fieldtwo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunll.quartz.entity.sms.Sms">
+    <!--          -->
+    update sms
+    set sms_text = #{smsText,jdbcType=VARCHAR},
+      sms_date = #{smsDate,jdbcType=TIMESTAMP},
+      business_id = #{businessId,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=INTEGER},
+      specific_id = #{specificId,jdbcType=VARCHAR},
+      sms_status = #{smsStatus,jdbcType=CHAR},
+      show_status = #{showStatus,jdbcType=CHAR},
+      fieldone = #{fieldone,jdbcType=VARCHAR},
+      fieldtwo = #{fieldtwo,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

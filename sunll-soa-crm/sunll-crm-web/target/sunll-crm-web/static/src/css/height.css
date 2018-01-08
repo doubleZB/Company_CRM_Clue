@@ -1,0 +1,29 @@
+#table-box {
+    height: calc(100% - 150px);
+}
+
+/* 线索里面的样式 */
+/*表格部分*/
+#clue-operate {
+    height: calc(100% - 34px);
+    /*background-color: #1E0FBE;*/
+}
+
+.fh-breadcrumb{
+    height: 100%;
+}
+
+/* 操作弹窗 */
+.operate-wrap {
+    height: calc(100% + 60px);
+}
+
+/* todo： 操作弹窗外层 */
+.operate-wrap .fh-breadcrumb {
+    height: calc(100% - 130px);
+    margin: 0;
+}
+
+#clue-operate table#operate-table {
+    max-height: calc(100% - 74px - 57px);
+}

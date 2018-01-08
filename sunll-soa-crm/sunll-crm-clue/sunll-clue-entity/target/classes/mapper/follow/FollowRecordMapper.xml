@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunll.clue.dao.follow.FollowRecordMapper">
+    <resultMap id="BaseResultMap" type="com.sunll.clue.entity.follow.FollowRecord">
+        <!--          -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="follow_content" jdbcType="VARCHAR" property="followContent"/>
+        <result column="follow_up" jdbcType="INTEGER" property="followUp"/>
+        <result column="follow_next_time" jdbcType="TIMESTAMP" property="followNextTime"/>
+        <result column="follow_reminder_content" jdbcType="VARCHAR" property="followReminderContent"/>
+        <result column="follow_source_id" jdbcType="VARCHAR" property="followSourceId"/>
+        <result column="follow_source_type" jdbcType="INTEGER" property="followSourceType"/>
+        <result column="is_del" jdbcType="INTEGER" property="isDel"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="create_user_id" jdbcType="INTEGER" property="createUserId"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="update_user_id" jdbcType="INTEGER" property="updateUserId"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <!--          -->
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <!--          -->
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        <!--          -->
+        id, follow_content, follow_up, follow_next_time, follow_reminder_content, follow_source_id,
+        follow_source_type, is_del, create_time, create_user_id, update_time, update_user_id
+    </sql>
+
+    <!-- 根据来源id获取创建时间组 年月日 -->
+    <select id="selectCreateTimeGroupBy" parameterType="java.lang.String" resultType="java.lang.String">
+        select DATE_FORMAT(create_time, "%Y-%m-%d" )
+        from follow_record
+        where follow_source_id = #{followSourceId} AND is_del = 1
+        GROUP BY DATE_FORMAT(create_time, "%Y-%m-%d" )
+        ORDER BY create_time desc
+    </select>
+
+    <!-- 根据来源id获取创建时间组 年月日 -->
+    <select id="selectFollowRecordList" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from follow_record
+        where DATE_FORMAT(create_time, "%Y-%m-%d" ) = #{createTime}
+        AND is_del = 1
+        AND follow_source_id = #{followSourceId}
+        ORDER BY create_time desc
+    </select>
+
+    <select id="selectByExample" parameterType="com.sunll.clue.entity.follow.FollowRecordExample"
+            resultMap="BaseResultMap">
+        <!--          -->
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from follow_record
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        <!--          -->
+        select
+        <include refid="Base_Column_List"/>
+        from follow_record
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        <!--          -->
+        delete from follow_record
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.sunll.clue.entity.follow.FollowRecordExample">
+        <!--          -->
+        delete from follow_record
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.sunll.clue.entity.follow.FollowRecord">
+        <!--          -->
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into follow_record (follow_content, follow_up, follow_next_time,
+        follow_reminder_content, follow_source_id,
+        follow_source_type, is_del, create_time,
+        create_user_id, update_time, update_user_id
+        )
+        values (#{followContent,jdbcType=VARCHAR}, #{followUp,jdbcType=INTEGER}, #{followNextTime,jdbcType=TIMESTAMP},
+        #{followReminderContent,jdbcType=VARCHAR}, #{followSourceId,jdbcType=VARCHAR},
+        #{followSourceType,jdbcType=INTEGER}, #{isDel,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+        #{createUserId,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUserId,jdbcType=INTEGER}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.sunll.clue.entity.follow.FollowRecord">
+        <!--          -->
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into follow_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="followContent != null">
+                follow_content,
+            </if>
+            <if test="followUp != null">
+                follow_up,
+            </if>
+            <if test="followNextTime != null">
+                follow_next_time,
+            </if>
+            <if test="followReminderContent != null">
+                follow_reminder_content,
+            </if>
+            <if test="followSourceId != null">
+                follow_source_id,
+            </if>
+            <if test="followSourceType != null">
+                follow_source_type,
+            </if>
+            <if test="isDel != null">
+                is_del,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="createUserId != null">
+                create_user_id,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="updateUserId != null">
+                update_user_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="followContent != null">
+                #{followContent,jdbcType=VARCHAR},
+            </if>
+            <if test="followUp != null">
+                #{followUp,jdbcType=INTEGER},
+            </if>
+            <if test="followNextTime != null">
+                #{followNextTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="followReminderContent != null">
+                #{followReminderContent,jdbcType=VARCHAR},
+            </if>
+            <if test="followSourceId != null">
+                #{followSourceId,jdbcType=VARCHAR},
+            </if>
+            <if test="followSourceType != null">
+                #{followSourceType,jdbcType=INTEGER},
+            </if>
+            <if test="isDel != null">
+                #{isDel,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUserId != null">
+                #{createUserId,jdbcType=INTEGER},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateUserId != null">
+                #{updateUserId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.sunll.clue.entity.follow.FollowRecordExample"
+            resultType="java.lang.Long">
+        <!--          -->
+        select count(*) from follow_record
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        <!--          -->
+        update follow_record
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.followContent != null">
+                follow_content = #{record.followContent,jdbcType=VARCHAR},
+            </if>
+            <if test="record.followUp != null">
+                follow_up = #{record.followUp,jdbcType=INTEGER},
+            </if>
+            <if test="record.followNextTime != null">
+                follow_next_time = #{record.followNextTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.followReminderContent != null">
+                follow_reminder_content = #{record.followReminderContent,jdbcType=VARCHAR},
+            </if>
+            <if test="record.followSourceId != null">
+                follow_source_id = #{record.followSourceId,jdbcType=VARCHAR},
+            </if>
+            <if test="record.followSourceType != null">
+                follow_source_type = #{record.followSourceType,jdbcType=INTEGER},
+            </if>
+            <if test="record.isDel != null">
+                is_del = #{record.isDel,jdbcType=INTEGER},
+            </if>
+            <if test="record.createTime != null">
+                create_time = #{record.createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.createUserId != null">
+                create_user_id = #{record.createUserId,jdbcType=INTEGER},
+            </if>
+            <if test="record.updateTime != null">
+                update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.updateUserId != null">
+                update_user_id = #{record.updateUserId,jdbcType=INTEGER},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        <!--          -->
+        update follow_record
+        set id = #{record.id,jdbcType=INTEGER},
+        follow_content = #{record.followContent,jdbcType=VARCHAR},
+        follow_up = #{record.followUp,jdbcType=INTEGER},
+        follow_next_time = #{record.followNextTime,jdbcType=TIMESTAMP},
+        follow_reminder_content = #{record.followReminderContent,jdbcType=VARCHAR},
+        follow_source_id = #{record.followSourceId,jdbcType=VARCHAR},
+        follow_source_type = #{record.followSourceType,jdbcType=INTEGER},
+        is_del = #{record.isDel,jdbcType=INTEGER},
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+        create_user_id = #{record.createUserId,jdbcType=INTEGER},
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+        update_user_id = #{record.updateUserId,jdbcType=INTEGER}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.sunll.clue.entity.follow.FollowRecord">
+        <!--          -->
+        update follow_record
+        <set>
+            <if test="followContent != null">
+                follow_content = #{followContent,jdbcType=VARCHAR},
+            </if>
+            <if test="followUp != null">
+                follow_up = #{followUp,jdbcType=INTEGER},
+            </if>
+            <if test="followNextTime != null">
+                follow_next_time = #{followNextTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="followReminderContent != null">
+                follow_reminder_content = #{followReminderContent,jdbcType=VARCHAR},
+            </if>
+            <if test="followSourceId != null">
+                follow_source_id = #{followSourceId,jdbcType=VARCHAR},
+            </if>
+            <if test="followSourceType != null">
+                follow_source_type = #{followSourceType,jdbcType=INTEGER},
+            </if>
+            <if test="isDel != null">
+                is_del = #{isDel,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createUserId != null">
+                create_user_id = #{createUserId,jdbcType=INTEGER},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateUserId != null">
+                update_user_id = #{updateUserId,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.sunll.clue.entity.follow.FollowRecord">
+        <!--          -->
+        update follow_record
+        set follow_content = #{followContent,jdbcType=VARCHAR},
+        follow_up = #{followUp,jdbcType=INTEGER},
+        follow_next_time = #{followNextTime,jdbcType=TIMESTAMP},
+        follow_reminder_content = #{followReminderContent,jdbcType=VARCHAR},
+        follow_source_id = #{followSourceId,jdbcType=VARCHAR},
+        follow_source_type = #{followSourceType,jdbcType=INTEGER},
+        is_del = #{isDel,jdbcType=INTEGER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        create_user_id = #{createUserId,jdbcType=INTEGER},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_user_id = #{updateUserId,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <insert id="insertSmsSelective" parameterType="com.sunll.clue.entity.message.Sms">
+        <!--          -->
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into sms
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="smsText != null">
+                sms_text,
+            </if>
+            <if test="smsDate != null">
+                sms_date,
+            </if>
+            <if test="businessId != null">
+                business_id,
+            </if>
+            <if test="typeId != null">
+                type_id,
+            </if>
+            <if test="specificId != null">
+                specific_id,
+            </if>
+            <if test="smsStatus != null">
+                sms_status,
+            </if>
+            <if test="showStatus != null">
+                show_status,
+            </if>
+            <if test="fieldone != null">
+                fieldone,
+            </if>
+            <if test="fieldtwo != null">
+                fieldtwo,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="smsText != null">
+                #{smsText,jdbcType=VARCHAR},
+            </if>
+            <if test="smsDate != null">
+                #{smsDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="businessId != null">
+                #{businessId,jdbcType=INTEGER},
+            </if>
+            <if test="typeId != null">
+                #{typeId,jdbcType=INTEGER},
+            </if>
+            <if test="specificId != null">
+                #{specificId,jdbcType=VARCHAR},
+            </if>
+            <if test="smsStatus != null">
+                #{smsStatus,jdbcType=CHAR},
+            </if>
+            <if test="showStatus != null">
+                #{showStatus,jdbcType=CHAR},
+            </if>
+            <if test="fieldone != null">
+                #{fieldone,jdbcType=VARCHAR},
+            </if>
+            <if test="fieldtwo != null">
+                #{fieldtwo,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+
+
+</mapper>

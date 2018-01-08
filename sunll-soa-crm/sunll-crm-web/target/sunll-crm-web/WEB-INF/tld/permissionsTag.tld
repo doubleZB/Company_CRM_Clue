@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+    <tlib-version>1.0</tlib-version><!-- 代表标签库的版本号 -->
+    <jsp-version>1.2</jsp-version><!-- 代表jsp的版本 -->
+    <short-name>permissionsTag</short-name><!-- 你的标签库的简称 -->
+    <uri>http://com.sunll.crm.permissionsTag</uri><!-- 你标签库的引用uri -->
+
+    <tag>
+        <name>hasPermissions</name><!-- 你定义的标签的名称 -->
+        <tag-class>com.sunll.web.controller.tld.PermissionsTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
+        <body-content>JSP</body-content><!-- 标签体内容的格式 -->
+        <attribute>
+            <name>permissionsCode</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>CRM_TOKEN</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

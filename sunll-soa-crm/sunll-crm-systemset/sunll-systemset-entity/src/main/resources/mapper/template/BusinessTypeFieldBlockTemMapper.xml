@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunll.systemset.dao.template.BusinessTypeFieldBlockTemMapper">
+    <resultMap id="BaseResultMap" type="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTem">
+        <!--          -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="field_name" jdbcType="VARCHAR" property="fieldName"/>
+        <result column="field_type" jdbcType="VARCHAR" property="fieldType"/>
+        <result column="field_alias" jdbcType="VARCHAR" property="fieldAlias"/>
+        <result column="is_enabled" jdbcType="INTEGER" property="isEnabled"/>
+        <result column="is_required" jdbcType="INTEGER" property="isRequired"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <!--          -->
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <!--          -->
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        <!--          -->
+        id, field_name, field_type, field_alias, is_enabled, is_required
+    </sql>
+    <resultMap id="ResultMap" type="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTem">
+        <!--          -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="field_name" jdbcType="VARCHAR" property="fieldName"/>
+        <result column="field_type" jdbcType="VARCHAR" property="fieldType"/>
+        <result column="field_alias" jdbcType="VARCHAR" property="fieldAlias"/>
+        <result column="is_enabled" jdbcType="INTEGER" property="isEnabled"/>
+        <result column="is_required" jdbcType="INTEGER" property="isRequired"/>
+        <collection property="businessTypeFieldTemList" column="id" select="selectFieldsById"/>
+    </resultMap>
+
+    <select id="selectFieldsById" parameterType="java.lang.Integer"
+            resultType="com.sunll.systemset.entity.template.BusinessTypeFieldTem">
+        SELECT b.id id,b.field_name fieldName,b.field_show_name fieldShowName,
+        b.field_type fieldType,b.field_alias fieldAlias,b.is_enabled isEnabled,
+        b.is_required isRequired,b.enter_prompt enterPrompt,b.is_modify isModify,b.is_show isShow,b.sort sort
+          FROM business_type_field_tem b
+            WHERE
+                EXISTS (
+                    SELECT
+                        a.field_tem_id
+                    FROM
+                        fieldblock_field_tem a
+                    WHERE
+                        a.field_block_tem_id = #{id}
+                        and a.field_tem_id=b.id
+                )
+    </select>
+
+    <sql id="Column_List">
+        <!--          -->
+        a.id, a.field_name, a.field_type, a.field_alias, a.is_enabled, a.is_required
+    </sql>
+
+    <select id="selectBlockAndFieldByBusinessTypeId" parameterType="java.lang.Integer"
+            resultMap="ResultMap">
+        <!--          -->
+        select
+        <include refid="Column_List"/>
+        FROM business_type_field_block_tem a
+        WHERE
+        EXISTS (
+        SELECT
+        b.field_block_tem_id
+        FROM
+        bustype_block_tem b
+        WHERE
+        b.business_type_tem_id = #{id}
+        and b.field_block_tem_id=a.id
+        )
+    </select>
+
+    <select id="selectByExample" parameterType="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTemExample"
+            resultMap="BaseResultMap">
+        <!--          -->
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from business_type_field_block_tem
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        <!--          -->
+        select
+        <include refid="Base_Column_List"/>
+        from business_type_field_block_tem
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        <!--          -->
+        delete from business_type_field_block_tem
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTemExample">
+        <!--          -->
+        delete from business_type_field_block_tem
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTem">
+        <!--          -->
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into business_type_field_block_tem (field_name, field_type, field_alias,
+        is_enabled, is_required)
+        values (#{fieldName,jdbcType=VARCHAR}, #{fieldType,jdbcType=VARCHAR}, #{fieldAlias,jdbcType=VARCHAR},
+        #{isEnabled,jdbcType=INTEGER}, #{isRequired,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTem">
+        <!--          -->
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into business_type_field_block_tem
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="fieldName != null">
+                field_name,
+            </if>
+            <if test="fieldType != null">
+                field_type,
+            </if>
+            <if test="fieldAlias != null">
+                field_alias,
+            </if>
+            <if test="isEnabled != null">
+                is_enabled,
+            </if>
+            <if test="isRequired != null">
+                is_required,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="fieldName != null">
+                #{fieldName,jdbcType=VARCHAR},
+            </if>
+            <if test="fieldType != null">
+                #{fieldType,jdbcType=VARCHAR},
+            </if>
+            <if test="fieldAlias != null">
+                #{fieldAlias,jdbcType=VARCHAR},
+            </if>
+            <if test="isEnabled != null">
+                #{isEnabled,jdbcType=INTEGER},
+            </if>
+            <if test="isRequired != null">
+                #{isRequired,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTemExample"
+            resultType="java.lang.Long">
+        <!--          -->
+        select count(*) from business_type_field_block_tem
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        <!--          -->
+        update business_type_field_block_tem
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.fieldName != null">
+                field_name = #{record.fieldName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.fieldType != null">
+                field_type = #{record.fieldType,jdbcType=VARCHAR},
+            </if>
+            <if test="record.fieldAlias != null">
+                field_alias = #{record.fieldAlias,jdbcType=VARCHAR},
+            </if>
+            <if test="record.isEnabled != null">
+                is_enabled = #{record.isEnabled,jdbcType=INTEGER},
+            </if>
+            <if test="record.isRequired != null">
+                is_required = #{record.isRequired,jdbcType=INTEGER},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        <!--          -->
+        update business_type_field_block_tem
+        set id = #{record.id,jdbcType=INTEGER},
+        field_name = #{record.fieldName,jdbcType=VARCHAR},
+        field_type = #{record.fieldType,jdbcType=VARCHAR},
+        field_alias = #{record.fieldAlias,jdbcType=VARCHAR},
+        is_enabled = #{record.isEnabled,jdbcType=INTEGER},
+        is_required = #{record.isRequired,jdbcType=INTEGER}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective"
+            parameterType="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTem">
+        <!--          -->
+        update business_type_field_block_tem
+        <set>
+            <if test="fieldName != null">
+                field_name = #{fieldName,jdbcType=VARCHAR},
+            </if>
+            <if test="fieldType != null">
+                field_type = #{fieldType,jdbcType=VARCHAR},
+            </if>
+            <if test="fieldAlias != null">
+                field_alias = #{fieldAlias,jdbcType=VARCHAR},
+            </if>
+            <if test="isEnabled != null">
+                is_enabled = #{isEnabled,jdbcType=INTEGER},
+            </if>
+            <if test="isRequired != null">
+                is_required = #{isRequired,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.sunll.systemset.entity.template.BusinessTypeFieldBlockTem">
+        <!--          -->
+        update business_type_field_block_tem
+        set field_name = #{fieldName,jdbcType=VARCHAR},
+        field_type = #{fieldType,jdbcType=VARCHAR},
+        field_alias = #{fieldAlias,jdbcType=VARCHAR},
+        is_enabled = #{isEnabled,jdbcType=INTEGER},
+        is_required = #{isRequired,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

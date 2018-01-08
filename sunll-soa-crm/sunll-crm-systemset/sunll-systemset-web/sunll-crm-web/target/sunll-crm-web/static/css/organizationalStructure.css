@@ -1,0 +1,807 @@
+html,body{
+	width:100%;
+	height:100%;
+	background: #f2f2f2;
+	overflow-y: hidden;
+}
+.wrap{
+	width:calc(100% - 60px);
+	height:calc(100% - 90px);
+	padding:20px 30px ;
+}
+.nav{
+	overflow: hidden;
+	border-bottom:1px solid #e5e5e5;
+}
+.red{
+	color:red;
+}
+.nav > div{
+	float:left;
+	width:110px;
+	height:34px;
+	background: #f2f2f2;
+	color:#999999;
+	border-radius: 2px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 34px;
+	cursor: pointer;
+}
+.nav > div:nth-of-type(1){
+	background: #fe7c42;
+	color:#fff;
+}
+.main{
+	background: #fff;
+	overflow: hidden;
+	height: calc(100% - 40px);
+	position: relative;
+	margin-top:10px;
+}
+.mainLeft{
+	width:220px;
+	height: 100%;
+	position: relative;
+	float:left;
+	background: #fff;
+}
+.mainCont{
+	 height: calc(100% - 120px);
+	 overflow:scroll ;
+	 overflow-x: hidden;
+}
+.operation{
+	clear: both;
+	width: 90%;
+	margin: 0 auto ;
+	border-top:1px solid #e6e6e6;
+	padding-top:10px;
+}
+.operation > div{
+	width:50%;
+	height:40px;
+	text-align: center;
+	line-height: 40px;
+	float:left;
+	cursor: pointer;
+}
+.operation > div:hover{
+	color:#fe641c;
+}
+.dis{
+	display: inline-block;
+}
+.Enable{
+	color:#35b1ff;
+}
+.Disable{
+	color:#fe641c;
+}
+.mainRight{
+	box-sizing: border-box;
+	padding:0 10px;
+	position: relative;
+	background: #fff;
+	float:left;
+	width: calc(100% - 220px);
+	box-shadow: 0 0 5px 0 #e1e1e1;
+	height:100%;
+}
+.mainHead{
+	line-height: 60px;
+	border-bottom:1px solid #e8e8e8;
+}
+.mainHead > span:nth-of-type(1){
+	font-size: 16px;
+	font-weight: bold;999999
+}
+.mainHead > span:nth-of-type(2){
+	color:#999999;
+	padding:0 20px;	
+}
+.mainHead > span:nth-of-type(3){
+	color:#fe641c;
+	cursor:pointer;
+}
+.headBtn{
+	height:32px;
+	line-height: 32px;
+	padding:0 20px;
+	color:#fff;
+	background: #c2c2c2;
+	border-radius: 3px;
+	margin:13px 0 0 12px;
+}
+.headBtn:last-of-type{
+	margin-left:0;
+}
+.headBtn:hover{
+	background: #333333;
+	cursor: pointer;
+}
+.table{
+	width:100%;
+	text-align: center;
+}
+.table tr{
+	line-height: 50px;
+}
+.table tr:nth-of-type(1){
+	font-weight: bold;
+}
+.table tr:nth-of-type(2n){
+	background: #fafafa;
+}
+.edit{
+	margin-left:15px;
+}
+.fa{
+	padding-right:3px;
+}
+.mainPaging{
+	padding-top:5px;
+	line-height: 60px;
+	color:#666666;
+	padding-right:30px;
+	box-sizing: border-box;
+}
+.mainPaging img{
+	width:24px;
+	height:24px;
+	position: relative;
+	top:9px;
+	padding:3px;
+	cursor: pointer;
+}
+.mainPaging  select{
+	width:70px;
+	height:24px;
+	margin:16px 0 0 0;
+	border-color: #cccccc;
+	cursor: pointer;
+}
+.PagingTxtIpt{
+	margin:0 5px;
+	margin-top:-2px;
+}
+.PagingTxtIpt > input{
+	width:70px;
+	height:24px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	border:1px solid #cccccc;
+}
+.PagingTxt{
+	padding:0 25px 0 0;
+}
+.Jump{
+	width:70px;
+	border-radius: 3px;
+	height:24px;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 24px;
+	border:1px solid #cccccc;
+	margin-top:16px;
+	cursor: pointer;
+}
+.mainZtree{
+	margin:20px 0 0 0;
+	height:calc(100% - 120px);
+	overflow: scroll;
+	overflow-x:hidden ;
+}
+input[type=checkbox] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    -webkit-appearance: none;
+    background-image: transparent;
+    margin-right: 3px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right:10px;
+    margin-top:-2px;
+}
+
+input[type=checkbox]:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/checkN.png");
+    background-size: 100% 100%;
+    border: 0;
+    background-color: transparent;
+}
+
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url("../images/checkRed.png");
+    background-size: 100% 100%;
+    border: 0;
+    background-color: transparent;
+}
+
+
+
+/*ztree*/
+.ztree * {font-size: 10pt;font-family:"Microsoft Yahei",Verdana,Simsun,"Segoe UI Web Light","Segoe UI Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol","Helvetica Neue",Arial}
+.ztree li ul{ margin:0; padding:0}
+.ztree li {line-height:45px;}
+.ztree li a {width:200px;height:40px;padding-top: 0px;}
+.ztree li a:hover {text-decoration:none; background-color: #E7E7E7;}
+.ztree li a span.button.switch {visibility:hidden}
+.ztree.showIcon li a span.button.switch {visibility:visible}
+.ztree li a.curSelectedNode {background-color:#D4D4D4;border:0;height:40px;}
+.ztree li span {line-height:40px;}
+.ztree li span.button {margin-top: -7px;}
+.ztree li span.button.switch {width: 16px;height: 16px;}
+
+.ztree li a.level0 span {font-size: 150%;font-weight: bold;}
+.ztree li span.button {background-image:url("../images/left_menuForOutLook.png"); *background-image:url("../images/left_menuForOutLook.gif")}
+.ztree li span.button.switch.level0 {width: 20px; height:20px}
+.ztree li span.button.switch.level1 {width: 20px; height:20px}
+.ztree li span.button.noline_open {background-position: 0 0;}
+.ztree li span.button.noline_close {background-position: -18px 0;}
+.ztree li span.button.noline_open.level0 {background-position: 0 -18px;}
+.ztree li span.button.noline_close.level0 {background-position: -18px -18px;}
+
+
+/*弹窗*/
+.mainSearch{
+	display: none;
+}
+.mainSearch > input{
+	width:240px;
+	height: 30px;
+	border-radius: 3px;
+	border:1px solid #c2c2c2;
+	padding-left:10px;
+}
+.mainSearch > span{
+	width: 80px;
+	height:31px;
+	color: #fff;
+	background: #fe641c;
+	display: inline-block;
+	line-height: 32px;
+	text-align: center;
+	border-radius: 4px;
+	margin-left:15px;
+	cursor: pointer;
+}
+.mainSearch .mainSearchCancel{
+	background: #999;
+}
+.zhe{
+	width:100%;
+	height:100%;
+	background: rgba(0,0,0,.6);
+	position: absolute;
+	left:0;
+	top:0;
+	z-index: 90;
+	display: none;
+}
+.wh{
+	width:30px;
+	text-align: center;
+}
+.Department{
+	position: absolute;
+	right:-41%;
+	top:0;
+	height:100%;
+	width:40%;
+	background: #fff;
+	box-shadow: 0 0 5px 0 #ccc;
+	transition: .2s ;
+	z-index: 99;
+}
+.PopupTitle{
+	width: 90%;
+	margin:0 auto;
+	border-bottom:2px solid #f3f3f3;
+	line-height: 60px;
+	font-size: 16px;
+}
+.PopupTitle > span{
+	display: inline-block;
+	line-height: 59px;
+	padding:0 5px;
+	font-weight: 600;
+	border-bottom:2px solid #fe641c;
+}
+.DepartmentTable{
+	margin:20px 0 0 30px;
+	height:140px;
+	color:#666666;
+}
+.DepartmentTable tr td:nth-of-type(1){
+	color:#fe7c42;
+}
+.DepartmentTable tr td:nth-of-type(2){
+	width:80px;
+}
+.DepartmentTable tr td:nth-of-type(3) > div{
+	display: inline-block;
+	position: relative;
+	padding:10px 15px;
+}
+.DepartmentTable tr td:nth-of-type(3) input{
+	height:30px;
+	width:180px;
+	border:none;
+	outline: none;
+	margin-left:15px;
+}
+.DepartmentTable tr td:nth-of-type(4) img{
+	width: 55px;
+	height:28px;
+	cursor: pointer;
+	margin-left:20px;
+}
+.DepartmentTable tr td:nth-of-type(3) > div > span{
+	position: absolute;
+	right: 0;
+	top:0;
+	color:#fff;
+	background: #fe641c;
+	padding:0 3px;
+	border-radius: 50%;
+	font-size: 18px;
+}
+.DepartmentBtn > div{
+	width:80px;
+	height:35px;
+	text-align: center;
+	line-height: 35px;
+	color:#fff;
+	float:left;
+	background: #fe641c;
+	border-radius: 4px;
+	margin:40% 0 0 30px;
+	cursor: pointer;
+	font-weight: 600;
+}
+.DepartmentBtn .cancel{
+	margin-left:20px;
+	background: #333333;
+}
+.DepartmentCenter{
+	position: absolute;
+	width: 500px;
+	height:300px;
+	background: #fff;
+	z-index: 100;
+	border-radius: 4px;
+	left:calc(50% - 250px);
+	top:calc(50% - 200px);
+	display: none;
+}
+.DepartmentCenter > .Tip{
+	text-align: center;
+	color:#fe641c;
+	line-height: 60px;
+	border-bottom:1px solid #e6e6e6;
+}
+.DepartmentCenter > .Txt{
+	text-align: center;
+	line-height: 20px;
+	margin: 60px 0;
+}
+.deleteDepartmentBtn{
+	width:200px;
+	margin: 0 auto;
+}
+.deleteDepartmentBtn > div{
+	width:80px;
+	height:35px;
+	text-align: center;
+	line-height: 35px;
+	float:left;
+	background: #fe641c;
+	color:#fff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.deleteDepartmentBtn > div:first-child{
+	background: #999999;
+	margin-right:40px;
+}
+.deleteBack{
+	width:120px;
+	height:35px;
+	text-align: center;
+	line-height: 35px;
+	background: #fe641c;
+	color:#fff;
+	border-radius: 4px;
+	cursor: pointer;
+	margin: 0 auto;
+}
+.TxtOne {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #DEDEDE;
+    text-align: center;
+    border-top: 1px solid #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+.positionOne{
+	position: absolute;
+	width:600px;
+	height:400px;
+	left:calc(50% - 300px);
+	top:calc(50% - 200px);
+	background: #fff;
+	z-index: 100;
+	display: none;
+	border-radius: 4px;
+}
+.positionHead{
+	line-height: 60px;
+	padding:0 20px;
+	box-sizing: border-box;
+	border-bottom:1px solid #e6e6e6;
+	height: 60px;
+}
+.positionHead > span:nth-of-type(1){
+	float:left;
+}
+.positionBtn{
+	width:80px;
+	height:35px;
+	background: #fe641c;
+	color:#fff;
+	margin: 50px auto 0;
+	border-radius: 4px;
+	line-height: 34px;
+	text-align: center;
+	cursor: pointer;
+	
+}
+.positionHead > span:nth-of-type(2){
+	float:right;
+	font-size: 20px;
+	cursor: pointer;
+}
+.positionOneCont {
+    padding-top: 30px;
+    padding-left:30px;
+    clear: both;
+}
+
+.positionOneCont > p {
+    line-height: 30px;
+}
+
+.positionOneCont > select {
+    margin: 0 8px;
+    width: 130px;
+}
+
+.ContBold {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    padding-right: 25px;
+    padding-top:20px;
+    clear: both;
+}
+/*添加成员*/
+.Member{
+	position: absolute;
+	right:-41%;
+	top:0;
+	height:100%;
+	width:40%;
+	background: #fff;
+	box-shadow: 0 0 5px 0 #ccc;
+	transition: .2s ;
+	z-index: 99;
+}
+.MemberTitle{
+	width: 90%;
+	margin:0 auto;
+	border-bottom:2px solid #f3f3f3;
+	line-height: 60px;
+	font-size: 16px;
+}
+.MemberTitle > span{
+	display: inline-block;
+	line-height: 59px;
+	padding:0 5px;
+	font-weight: 600;
+	border-bottom:2px solid #fe641c;
+}
+.MemberInformation{
+	padding-right:30px;
+	box-sizing: border-box;
+}
+.MemberInformation > div{
+	float:right;
+	color:#999999
+}
+.MemberInformation > li {
+	line-height: 50px;
+	clear: both;
+	margin-top:20px;
+	background: #eee;
+}
+.MemberInformation > li div{
+	float:left;
+}
+.MemberInformation > li img{
+	float:right;
+	width:55px;
+	height:28px;
+	margin:10px 0 0 5px;
+	cursor: pointer;
+}
+.MemberInformation > li > span:nth-of-type(1){
+	float:left;
+	width:50px;
+	text-align: center;
+	display: inline-block;
+	padding-left:20px;
+	color:#fe641c;
+	background: #fff;
+}
+.MemberInformation > li > span:nth-of-type(2){
+	float:left;
+	width:60px;
+	text-align-last: justify;
+	text-align: center;
+	padding-left:10px;
+}
+.MemberInformation > li input[type="text"]{
+	height:40px;
+	width:200px;
+	margin-left:20px;
+	border:none;
+	outline: none;
+	background: #eee;
+}
+.MemberInformation > li input[type="radio"]{
+	margin:0 10px 0 20px;
+}
+.opacityN{
+	color:#fff;
+}
+.MemberBtn > div{
+	width:80px;
+	height:35px;
+	text-align: center;
+	line-height: 35px;
+	color:#fff;
+	float:left;
+	background: #fe641c;
+	border-radius: 4px;
+	margin:10% 0 0 30px;
+	cursor: pointer;
+	font-weight: 600;
+}
+.MemberBtn > div:nth-of-type(2){
+	margin-left:20px;
+	background: #333333;
+}
+.MemberDepartment{
+	padding-right:15px;
+	position: relative;
+	float:left;
+	margin-left:10px
+}
+.MemberDepartment > span{
+	position: absolute;
+	width:15px;
+	text-align: center;
+	line-height: 15px;
+	height:15px;
+	top:7px;
+	right:0;
+	border-radius: 50%;
+	background:#fe641c ;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+input[type=radio] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    -webkit-appearance: none;
+    background-image: transparent;
+    margin-right: 3px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input[type=radio]:after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/RadioN.png);
+    background-size: 100% 100%;
+    border: 0;
+    background-color: transparent;
+}
+
+input[type=radio]:checked:after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/RadioY.png);
+    background-size: 100% 100%;
+    border: 0;
+    background-color: transparent;
+}
+/*修改成员*/
+.editInformation{
+	width:90%;
+	margin:0 auto;
+	clear: both;
+	padding:10px 0 10px  10%;
+	box-sizing: border-box;
+	border-bottom:2px solid #f3f3f3;
+	overflow: hidden;
+}
+.editInformationW{
+	display: inline-block;
+	width:60px;
+	text-align-last: justify;
+}
+.editInformationTip{
+	padding-left:10px;
+}
+.resetPassword{
+	display: inline-block;
+	width:80px;
+	height:35px;
+	color:#fff;
+	background: #fe641c;
+	text-align: center;
+	line-height: 35px;
+	border-radius: 4px;
+	margin-left:20px;
+	cursor: pointer;
+}
+.editInformation > div{
+	width:50%;
+	float:left;
+	height:45px;
+	line-height: 45px;
+}
+.editInformation > div:nth-of-type(3){
+	clear: both;
+	width:100%;
+}
+/*导出导入*/
+.exportImport{
+	position: absolute;
+	width:550px;
+	left:calc(50% - 275px);
+	top:calc(50% - 200px);
+	background: #fff;
+	border-radius: 4px;
+	z-index: 100;
+}
+.error{
+	margin-top: 46px;
+	color: #ff0000;
+	display:none;
+}
+.error a{
+	 text-decoration: underline;
+	color:#ff0000;
+ }
+.exportImportNav{
+	border-bottom:1px solid #e6e6e6;
+	height:30px;
+	padding-left:10px;
+	margin-top:15px;
+}
+.exportImportNav > li{
+	height:30px;
+	width:85px;
+	border-radius: 2px;
+	line-height: 30px;
+	text-align: center;
+	color:#999999;
+	background: #fff;
+	float:left;
+	cursor: pointer;
+}
+.exportImportNavaction{
+	color:#fff!important;
+	background: #fe641c!important;
+}
+.exportTxt{
+	padding:0 20px;
+	height:250px;
+}
+.exportTxt > p{
+	line-height: 30px;
+}
+.exportTxt > h4{
+	font-size: 18px;
+	font-weight: bold;
+	padding:15px 0 10px;
+}
+.exportTxt > a{
+	text-decoration: underline;
+	color:#2c8ff4;
+	display: inline-block;
+	margin:15px 0 15px;
+}
+.exportOperation{
+	padding:0 20px;
+	overflow: hidden;
+	margin-bottom:25px;
+}
+.exportOperation > input{
+	width: calc(100% - 100px);
+	height:30px;
+	border:1px solid #c2c2c2;
+	outline: none;
+}
+.exportOperation > div{
+	float: right;
+	width:80px;
+	height:32px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 32px;
+	color:#fff;
+	background: #999;
+	border-radius: 4px;
+}
+.startExport{
+	border-top:1px solid #e6e6e6;
+	clear: both;
+	height:36px;
+	padding:25px 0 20px;
+}
+.startExport > div{
+	width:100px;
+	height:36px;
+	border:1px solid #fe661f;
+	color:#fe661f;
+	text-align: center;
+	line-height: 36px;
+	border-radius: 4px;
+	margin:0 auto;
+	cursor: pointer;
+}
+.exportImportBack{
+	position: absolute;
+	right:7px;
+	top:3px;
+	font-size: 24px;
+	color:#999;
+	padding:5px;
+	cursor: pointer;
+}
+.exportImport{
+	display: none;
+}
+.ImportTxt > a{
+	text-decoration: underline;
+	color:#2c8ff4;
+	display:block;
+	margin:50px 0;
+	text-align: center;
+}

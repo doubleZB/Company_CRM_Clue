@@ -1,0 +1,45 @@
+.table {
+  margin: 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #fbfbfb;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+}
+
+.table-blue th {
+  background-color: #2885ec !important;
+  color: #fff !important;
+  font-weight: normal;
+  .dropdown-toggle {
+    color: #fff;
+  }
+}
+
+table#clue-main-table {
+  thead {
+    height: 75px;
+  }
+  th, td {
+    vertical-align: middle;
+    text-align: center;
+    line-height: 3.5;
+    border-top: none;
+  }
+  tbody td {
+    border-bottom: 1px solid rgb(231, 234, 236);
+  }
+}
+
+table#operate-table {
+  width: 100% !important;
+}

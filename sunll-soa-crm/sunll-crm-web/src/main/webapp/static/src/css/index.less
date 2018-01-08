@@ -1,0 +1,165 @@
+@import "common/common";
+
+#wrapper, #setUp {
+  height: 100%;
+  background-color: #37445f;
+  overflow: hidden;
+}
+
+@title-bgColor: #2885ec;
+.logo-element {
+  padding: 12.5px 0;
+  background-color: @title-bgColor;
+}
+
+.nav-header {
+  padding: 12px 18px;
+  background-color: @title-bgColor;
+}
+
+@navColorActive: #2f3b53;
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus {
+  background-color: @navColorActive;
+}
+
+.nav > li.active {
+  border: none;
+  background: @navColorActive;
+}
+
+.canvas-menu.mini-navbar .nav-second-level {
+  background: @navColorActive;
+}
+
+.nav-second-level li a {
+  padding-left: 48px;
+}
+
+.count-info .label {
+  line-height: 12px;
+  padding: 2px 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.navbar-static-top {
+  //height: 50px !important;
+  //overflow: hidden;
+  .img-circle {
+    width: 30px;
+    height: 30px;
+  }
+  .navbar-header {
+    padding: 7px 0;
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 0;
+    }
+  }
+}
+
+.navbar-top-links li.relative {
+  position: relative;
+  input {
+    padding-right: 30px;
+  }
+  i {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    cursor: pointer;
+  }
+}
+
+.navbar-top-links li a {
+  padding: 10px;
+  min-height: 30px;
+}
+
+.navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks, .navbar-top-links .dropdown-alerts {
+  width: 130px;
+}
+
+.iframe-wrap {
+  width: 100%;
+  background-color: @bgColor;
+  margin-top: 15px;
+  #iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  @nav-w: 160px;
+  #page-wrapper {
+    position: inherit;
+    margin: 0 0 0 @nav-w;
+    min-height: 1200px;
+  }
+
+  .navbar-static-side {
+    z-index: 2001;
+    position: absolute;
+    width: @nav-w;
+  }
+
+  .navbar-top-links .dropdown-messages,
+  .navbar-top-links .dropdown-tasks,
+  .navbar-top-links .dropdown-alerts {
+    margin-left: auto;
+  }
+}
+
+.ibox-heading {
+  background: #fff;
+}
+
+@right-sidebar-width: 500px;
+#right-sidebar {
+  top: 50px;
+  width: @right-sidebar-width !important;
+  right: -@right-sidebar-width;
+  box-shadow: 0 0 20px #f1f1f1;
+}
+
+// -- 消息
+#right-sidebar h4 {
+  line-height: 25px;
+  height: 25px;
+  border-left: 2px solid #2885ec;
+  text-indent: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ibox-title {
+  padding: 5px 0;
+  h5 {
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
+.ibox-tools {
+  margin-top: 10px;
+  .ibox-tools a {
+    color: #2885ec;
+  }
+}
+
+.ibox {
+  margin-bottom: 0;
+
+}
+
+.col-lg-4 {
+  width: 100%;
+}

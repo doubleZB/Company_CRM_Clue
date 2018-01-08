@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fastdfs-client/fastdfs-client.iml" filepath="$PROJECT_DIR$/fastdfs-client/fastdfs-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatise-generator/mybatise-generator.iml" filepath="$PROJECT_DIR$/mybatise-generator/mybatise-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-clue/sunll-clue-api/sunll-clue-api.iml" filepath="$PROJECT_DIR$/sunll-crm-clue/sunll-clue-api/sunll-clue-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-clue/sunll-clue-entity/sunll-clue-entity.iml" filepath="$PROJECT_DIR$/sunll-crm-clue/sunll-clue-entity/sunll-clue-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-clue/sunll-clue-service/sunll-clue-service.iml" filepath="$PROJECT_DIR$/sunll-crm-clue/sunll-clue-service/sunll-clue-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-clue/sunll-clue-web/sunll-clue-web.iml" filepath="$PROJECT_DIR$/sunll-crm-clue/sunll-clue-web/sunll-clue-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-common/sunll-common.iml" filepath="$PROJECT_DIR$/sunll-common/sunll-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-clue/sunll-crm-clue.iml" filepath="$PROJECT_DIR$/sunll-crm-clue/sunll-crm-clue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-crm-quartz.iml" filepath="$PROJECT_DIR$/sunll-crm-quartz/sunll-crm-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-crm-systemset.iml" filepath="$PROJECT_DIR$/sunll-crm-systemset/sunll-crm-systemset.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-web/sunll-crm-web.iml" filepath="$PROJECT_DIR$/sunll-crm-web/sunll-crm-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-api/sunll-quartz-api.iml" filepath="$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-api/sunll-quartz-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-entity/sunll-quartz-entity.iml" filepath="$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-entity/sunll-quartz-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-service/sunll-quartz-service.iml" filepath="$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-service/sunll-quartz-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-web/sunll-quartz-web.iml" filepath="$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-web/sunll-quartz-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-soa-crm.iml" filepath="$PROJECT_DIR$/sunll-soa-crm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-api/sunll-systemset-api.iml" filepath="$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-api/sunll-systemset-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-entity/sunll-systemset-entity.iml" filepath="$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-entity/sunll-systemset-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-service/sunll-systemset-service.iml" filepath="$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-service/sunll-systemset-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-web/sunll-systemset-web.iml" filepath="$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-web/sunll-systemset-web.iml" />
+    </modules>
+  </component>
+</project>

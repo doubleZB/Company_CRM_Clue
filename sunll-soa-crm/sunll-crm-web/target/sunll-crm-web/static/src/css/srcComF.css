@@ -1,0 +1,41 @@
+.editShow {
+  width: 500px;
+  height: 80%;
+  position: absolute;
+  background: #fff;
+  padding: 0 20px;
+  z-index: 22;
+  box-shadow: 0px 0px 20px #f1f1f1;
+  top: 90px;
+  right: -550px;
+  transition: right 2s;
+}
+.editShow h4 {
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  color: #222222;
+  font-weight: 500;
+}
+.editShow div {
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 15px;
+}
+.editShow div span {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+}
+.editShow div .form-control {
+  width: 330px;
+  height: 40px;
+  line-height: 40px;
+}
+.editShow .posttio {
+  position: absolute;
+  bottom: 20px;
+}

@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.sunll.crm</groupId>
+        <artifactId>sunll-soa-crm</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>sunll-crm-systemset</artifactId>
+    <packaging>pom</packaging>
+    <name>sunll-crm-systemset</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+	
+	<modules>
+        <module>sunll-systemset-api</module>
+		<module>sunll-systemset-entity</module>
+		<module>sunll-systemset-service</module>
+        <module>sunll-systemset-web</module>
+    </modules>
+
+</project>

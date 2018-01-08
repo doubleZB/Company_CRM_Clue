@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunll.center.mapper.PredialTaskMapper">
+  <resultMap id="BaseResultMap" type="com.sunll.center.entity.PredialTask">
+    <!--          -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="accountid" jdbcType="INTEGER" property="accountid" />
+    <result column="taskname" jdbcType="VARCHAR" property="taskname" />
+    <result column="starttime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endtime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="totalcount" jdbcType="INTEGER" property="totalcount" />
+    <result column="callouttype" jdbcType="INTEGER" property="callouttype" />
+    <result column="wavfile" jdbcType="VARCHAR" property="wavfile" />
+    <result column="playstr" jdbcType="VARCHAR" property="playstr" />
+    <result column="showcaller" jdbcType="VARCHAR" property="showcaller" />
+    <result column="taskstatus" jdbcType="INTEGER" property="taskstatus" />
+    <result column="concurrentcall" jdbcType="INTEGER" property="concurrentcall" />
+    <result column="bind_flow_id" jdbcType="INTEGER" property="bindFlowId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--          -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--          -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--          -->
+    id, accountid, taskname, starttime, endtime, totalcount, callouttype, wavfile, playstr, 
+    showcaller, taskstatus, concurrentcall, bind_flow_id
+  </sql>
+  <select id="selectByExample" parameterType="com.sunll.center.entity.PredialTaskExample" resultMap="BaseResultMap">
+    <!--          -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from predial_task
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--          -->
+    select 
+    <include refid="Base_Column_List" />
+    from predial_task
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--          -->
+    delete from predial_task
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sunll.center.entity.PredialTaskExample">
+    <!--          -->
+    delete from predial_task
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sunll.center.entity.PredialTask">
+    <!--          -->
+    insert into predial_task (id, accountid, taskname, 
+      starttime, endtime, totalcount, 
+      callouttype, wavfile, playstr, 
+      showcaller, taskstatus, concurrentcall, 
+      bind_flow_id)
+    values (#{id,jdbcType=INTEGER}, #{accountid,jdbcType=INTEGER}, #{taskname,jdbcType=VARCHAR}, 
+      #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, #{totalcount,jdbcType=INTEGER}, 
+      #{callouttype,jdbcType=INTEGER}, #{wavfile,jdbcType=VARCHAR}, #{playstr,jdbcType=VARCHAR}, 
+      #{showcaller,jdbcType=VARCHAR}, #{taskstatus,jdbcType=INTEGER}, #{concurrentcall,jdbcType=INTEGER}, 
+      #{bindFlowId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunll.center.entity.PredialTask">
+    <!--          -->
+    insert into predial_task
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="accountid != null">
+        accountid,
+      </if>
+      <if test="taskname != null">
+        taskname,
+      </if>
+      <if test="starttime != null">
+        starttime,
+      </if>
+      <if test="endtime != null">
+        endtime,
+      </if>
+      <if test="totalcount != null">
+        totalcount,
+      </if>
+      <if test="callouttype != null">
+        callouttype,
+      </if>
+      <if test="wavfile != null">
+        wavfile,
+      </if>
+      <if test="playstr != null">
+        playstr,
+      </if>
+      <if test="showcaller != null">
+        showcaller,
+      </if>
+      <if test="taskstatus != null">
+        taskstatus,
+      </if>
+      <if test="concurrentcall != null">
+        concurrentcall,
+      </if>
+      <if test="bindFlowId != null">
+        bind_flow_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="accountid != null">
+        #{accountid,jdbcType=INTEGER},
+      </if>
+      <if test="taskname != null">
+        #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalcount != null">
+        #{totalcount,jdbcType=INTEGER},
+      </if>
+      <if test="callouttype != null">
+        #{callouttype,jdbcType=INTEGER},
+      </if>
+      <if test="wavfile != null">
+        #{wavfile,jdbcType=VARCHAR},
+      </if>
+      <if test="playstr != null">
+        #{playstr,jdbcType=VARCHAR},
+      </if>
+      <if test="showcaller != null">
+        #{showcaller,jdbcType=VARCHAR},
+      </if>
+      <if test="taskstatus != null">
+        #{taskstatus,jdbcType=INTEGER},
+      </if>
+      <if test="concurrentcall != null">
+        #{concurrentcall,jdbcType=INTEGER},
+      </if>
+      <if test="bindFlowId != null">
+        #{bindFlowId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sunll.center.entity.PredialTaskExample" resultType="java.lang.Long">
+    <!--          -->
+    select count(*) from predial_task
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+
+  <select id="selectMaxId" resultType="java.lang.Integer">
+    <!--          -->
+    select MAX(id) from predial_task
+  </select>
+
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--          -->
+    update predial_task
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.accountid != null">
+        accountid = #{record.accountid,jdbcType=INTEGER},
+      </if>
+      <if test="record.taskname != null">
+        taskname = #{record.taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.starttime != null">
+        starttime = #{record.starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endtime != null">
+        endtime = #{record.endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.totalcount != null">
+        totalcount = #{record.totalcount,jdbcType=INTEGER},
+      </if>
+      <if test="record.callouttype != null">
+        callouttype = #{record.callouttype,jdbcType=INTEGER},
+      </if>
+      <if test="record.wavfile != null">
+        wavfile = #{record.wavfile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.playstr != null">
+        playstr = #{record.playstr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.showcaller != null">
+        showcaller = #{record.showcaller,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taskstatus != null">
+        taskstatus = #{record.taskstatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.concurrentcall != null">
+        concurrentcall = #{record.concurrentcall,jdbcType=INTEGER},
+      </if>
+      <if test="record.bindFlowId != null">
+        bind_flow_id = #{record.bindFlowId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--          -->
+    update predial_task
+    set id = #{record.id,jdbcType=INTEGER},
+      accountid = #{record.accountid,jdbcType=INTEGER},
+      taskname = #{record.taskname,jdbcType=VARCHAR},
+      starttime = #{record.starttime,jdbcType=TIMESTAMP},
+      endtime = #{record.endtime,jdbcType=TIMESTAMP},
+      totalcount = #{record.totalcount,jdbcType=INTEGER},
+      callouttype = #{record.callouttype,jdbcType=INTEGER},
+      wavfile = #{record.wavfile,jdbcType=VARCHAR},
+      playstr = #{record.playstr,jdbcType=VARCHAR},
+      showcaller = #{record.showcaller,jdbcType=VARCHAR},
+      taskstatus = #{record.taskstatus,jdbcType=INTEGER},
+      concurrentcall = #{record.concurrentcall,jdbcType=INTEGER},
+      bind_flow_id = #{record.bindFlowId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunll.center.entity.PredialTask">
+    <!--          -->
+    update predial_task
+    <set>
+      <if test="accountid != null">
+        accountid = #{accountid,jdbcType=INTEGER},
+      </if>
+      <if test="taskname != null">
+        taskname = #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        starttime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endtime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalcount != null">
+        totalcount = #{totalcount,jdbcType=INTEGER},
+      </if>
+      <if test="callouttype != null">
+        callouttype = #{callouttype,jdbcType=INTEGER},
+      </if>
+      <if test="wavfile != null">
+        wavfile = #{wavfile,jdbcType=VARCHAR},
+      </if>
+      <if test="playstr != null">
+        playstr = #{playstr,jdbcType=VARCHAR},
+      </if>
+      <if test="showcaller != null">
+        showcaller = #{showcaller,jdbcType=VARCHAR},
+      </if>
+      <if test="taskstatus != null">
+        taskstatus = #{taskstatus,jdbcType=INTEGER},
+      </if>
+      <if test="concurrentcall != null">
+        concurrentcall = #{concurrentcall,jdbcType=INTEGER},
+      </if>
+      <if test="bindFlowId != null">
+        bind_flow_id = #{bindFlowId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunll.center.entity.PredialTask">
+    <!--          -->
+    update predial_task
+    set accountid = #{accountid,jdbcType=INTEGER},
+      taskname = #{taskname,jdbcType=VARCHAR},
+      starttime = #{starttime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP},
+      totalcount = #{totalcount,jdbcType=INTEGER},
+      callouttype = #{callouttype,jdbcType=INTEGER},
+      wavfile = #{wavfile,jdbcType=VARCHAR},
+      playstr = #{playstr,jdbcType=VARCHAR},
+      showcaller = #{showcaller,jdbcType=VARCHAR},
+      taskstatus = #{taskstatus,jdbcType=INTEGER},
+      concurrentcall = #{concurrentcall,jdbcType=INTEGER},
+      bind_flow_id = #{bindFlowId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

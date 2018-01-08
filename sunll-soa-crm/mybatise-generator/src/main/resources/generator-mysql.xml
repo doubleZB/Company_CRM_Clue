@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+	  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+	  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- 指定数据库驱动包 -->
+	<classPathEntry location="C:\soa_crm_svn\trunk\sunll-soa-crm\sunll-crm-web\target\sunll-crm-web\WEB-INF\lib\mysql-connector-java-5.1.36.jar" />
+
+	<!--<context id="OracleTables" targetRuntime="MyBatis3">-->
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+		<!-- 增加Models ToStirng方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <!-- 增加Models Serializable实现 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <!-- 分页插件 -->
+        <!-- 在example类中增 page 属性，并在mapper.xml的查询中加入page !=null 时的查询 -->
+        <!-- <plugin type="org.mybatis.generator.plugins.MySQLPagerPlugin" /> -->
+        <!-- 在example类中增 offset和limit属性，并在mapper.xml的查询中加入limit ${offset} ,
+         ${limit} 提供在offset和limit>0时的查询 -->
+		<!-- <plugin type="org.mybatis.generator.plugins.MySQLPaginationPlugin"></plugin> -->
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+
+		<!--mysql相关配置-->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://114.55.95.79:3306/soa-crm"
+                        userId="ytx_dev"
+                        password="Ytx_dev_2016">
+		</jdbcConnection>
+
+		<!-- oracle相关配置 -->
+		<!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"-->
+		<!--connectionURL="jdbc:oracle:thin:@119.90.36.56:15219/tsmsdb1"-->
+		<!--userId="smartuser"-->
+		<!--password="smartuser2016">-->
+		<!--</jdbcConnection>-->
+
+		<!-- 是否忽略BigDecimals 非必填项 -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 以下内容，需要改动 -->
+		<!-- java类  -->
+		<javaModelGenerator targetPackage="com.sunll.clue.entity.business"
+			targetProject="C:\soa_crm_svn\trunk">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- *Mapper.xml生成的位置 -->
+		<sqlMapGenerator targetPackage="com.sunll.clue.entity.business"
+			targetProject="C:\soa_crm_svn\trunk">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		
+		<!-- java mapper类(interface) -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.sunll.clue.dao.business"
+            targetProject="C:\soa_crm_svn\trunk">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		
+		<!-- 指定表格 -->
+        <table tableName="business_type_field_value_text" domainObjectName="BusinessTypeFieldValueText"
+			enableCountByExample="true" enableDeleteByExample="true"
+			enableSelectByExample="true" enableUpdateByExample="true">
+			<!-- 用于insert时，返回主键的编号 -->
+			<generatedKey column="id" sqlStatement="MySql" identity="true"/>
+		</table>
+
+	</context>
+</generatorConfiguration>

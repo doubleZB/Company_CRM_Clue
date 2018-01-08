@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/fastdfs-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatise-generator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-clue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-clue/sunll-clue-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-clue/sunll-clue-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-clue/sunll-clue-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-clue/sunll-clue-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-quartz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-quartz/sunll-quartz-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-systemset" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-systemset/sunll-systemset-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sunll-crm-web" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

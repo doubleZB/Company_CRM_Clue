@@ -1,0 +1,86 @@
+body,html{
+	width:100%;
+	height:100%;
+}
+.wrap{
+	width:100%;
+	height:100%;
+	background: url(../images/registerbg.png) no-repeat;
+	background-size:100% ;
+}
+.head{
+	height:38px;
+	line-height: 38px;
+	text-align: center;
+	padding:50px 30px;
+}
+.head > img{
+	height: 100%;
+	padding-right:15px;
+}
+.head > span{
+	position: relative;
+	top:-15px;
+	color:#fff;
+	font-size: 14px;
+}
+.padding{
+	padding:0 15px;
+}
+.main{
+	width:500px;
+	height:420px;
+	margin: 0 auto;
+	background: #fff;
+	box-shadow: 0 0 10px 0 #eee;
+	box-sizing: border-box;
+	padding:15px 25px ;
+	border-radius: 5px;
+}
+h3{
+	text-align: center;
+	font-size: 18px;
+	color:#fe641c;
+	font-weight: bold;
+	line-height: 40px;
+	padding-top:20px;
+}
+.cont{
+	clear: both;
+	margin:30px 0 30px 30px;
+	overflow: hidden;
+	padding-left:60px;
+}
+.main > img{
+	display: block;
+	margin: 20px auto;
+	width:220px;
+	height:130px;
+}
+.hrefBtn{
+	width:70%;
+	margin:40px auto 0;
+}
+.hrefBtn > div{
+	display: block;
+	width:40%;
+	text-align: center;
+	cursor: pointer;
+	line-height: 40px;
+	height:40px;
+	border-radius: 5px;
+	color:#fff;
+	background: #fe641c;
+	font-size: 16px;
+	float:left;
+}
+.hrefBtn > div:nth-of-type(2){
+	margin-left:20%;
+	background: #333333;
+}
+.footer{
+	text-align: center;
+	line-height: 80px;
+	color:#999999;
+	clear: both;
+}

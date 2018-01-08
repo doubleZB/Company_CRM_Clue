@@ -1,0 +1,32 @@
+.modal {
+
+  .modal-header {
+    background-color: #36445f;
+    .modal-title {
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  .modal-content {
+    background-color: #f8f8f8;
+    .form-group {
+      label {
+        text-align: right;
+        padding-left: 0;
+      }
+      label.must::before {
+        content: '*';
+        color: #f77e5b;
+        margin-right: 20px;
+      }
+    }
+    .textarea.form-control {
+      height: 200px;
+    }
+    input.form-control,select.form-control {
+      width: 320px;
+    }
+
+  }
+}

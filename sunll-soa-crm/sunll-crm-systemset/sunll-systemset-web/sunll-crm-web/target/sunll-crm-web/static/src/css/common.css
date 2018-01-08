@@ -1,0 +1,197 @@
+.animated-fast {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.layui-layer-title {
+  background-color: #36445f !important;
+  text-align: center;
+  color: #fff !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei";
+}
+body {
+  background-color: #f2f2f2;
+}
+.border-none {
+  border: none;
+}
+.btn-primary.disabled,
+.btn-primary.disabled:hover,
+.btn-primary.disabled:focus,
+.btn-primary.disabled:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled],
+.btn-primary[disabled]:hover,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled]:active,
+.btn-primary.active[disabled],
+fieldset[disabled] .btn-primary,
+fieldset[disabled] .btn-primary:hover,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary:active,
+fieldset[disabled] .btn-primary.active,
+.landing-page .btn-primary.disabled,
+.landing-page .btn-primary.disabled:hover,
+.landing-page .btn-primary.disabled:focus,
+.landing-page .btn-primary.disabled:active,
+.landing-page .btn-primary.disabled.active,
+.landing-page .btn-primary[disabled],
+.landing-page .btn-primary[disabled]:hover,
+.landing-page .btn-primary[disabled]:focus,
+.landing-page .btn-primary[disabled]:active,
+.landing-page .btn-primary.active[disabled],
+.landing-page fieldset[disabled] .btn-primary,
+.landing-page fieldset[disabled] .btn-primary:hover,
+.landing-page fieldset[disabled] .btn-primary:focus,
+.landing-page fieldset[disabled] .btn-primary:active,
+.landing-page fieldset[disabled] .btn-primary.active {
+  background-color: rgba(40, 133, 236, 0);
+  border-color: rgba(40, 133, 236, 0.7);
+  color: rgba(40, 133, 236, 0.7) !important;
+}
+.margin-none {
+  margin: 0;
+}
+.po-rela {
+  position: relative;
+}
+.po-abso {
+  position: absolute;
+}
+.font20 {
+  font-size: 20px;
+}
+.h100 {
+  height: 100%;
+}
+.wrap {
+  height: 100%;
+}
+.gray-bg,
+.bg-muted {
+  background-color: #f2f2f2;
+}
+.b-radio-3 {
+  border-radius: 3px!important;
+}
+.form-control,
+.single-line {
+  border-radius: 3px;
+}
+label {
+  color: #333;
+}
+.ibox-title {
+  border: none;
+}
+.ibox-title h5 {
+  font-size: 18px;
+  color: #222;
+  margin-top: 8px;
+}
+.ibox-content {
+  padding: 15px;
+}
+textarea.form-control {
+  resize: none !important;
+}
+select.form-control {
+  display: inline-block;
+  width: 120px;
+}
+input[type=checkbox]:focus,
+input[type=checkbox]:active,
+input[type=checkbox]:hover,
+input[type=checkbox]:link,
+input[type=radio]:focus,
+input[type=radio]:active,
+input[type=radio]:hover,
+input[type=radio]:link {
+  outline: none;
+}
+input[type=checkbox],
+input[type=radio] {
+  margin: 0;
+}
+input[type=checkbox] {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  -webkit-appearance: none;
+  background-image: transparent;
+  margin-top: -3px;
+  margin-right: 3px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+input[type=checkbox]:after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/icon/select.png);
+  background-size: 100% 100%;
+  border: 0;
+  background-color: transparent;
+}
+input[type=checkbox]:checked:after {
+  background-image: url(../images/icon/select-a.png);
+}
+input[type=checkbox].checkboxAll:after {
+  background-image: url(../images/icon/select-all.png);
+}
+input[type=checkbox].checkboxAll:checked:after {
+  background-image: url(../images/icon/select-all-a.png);
+}
+input[type=radio] {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  -webkit-appearance: none;
+  background-image: transparent;
+  margin-top: -3px;
+  margin-right: 3px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+input[type=radio]:after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/icon/radio.png);
+  background-size: 100% 100%;
+  border: 0;
+  background-color: transparent;
+}
+input[type=radio]:checked:after {
+  background-image: url(../images/icon/radio-a.png);
+}
+.page .form-control,
+.page .single-line,
+.page .btn {
+  border-radius: 0;
+}
+.page label {
+  font-weight: normal!important;
+}
+.page input[type=number] {
+  width: 60px;
+}
+.page input::-webkit-outer-spin-button,
+.page input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.page input[type="number"] {
+  -moz-appearance: textfield;
+}

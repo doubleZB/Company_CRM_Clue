@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:annotation package="com.sunll.quartz.service,com.sunll.common.redis,com.sunll.common.solr"/>
+
+    <dubbo:reference interface="com.sunll.clue.api.smsSupply.SmsSupplyService"
+                     id="smsSupplyService" check="false" timeout="100000" />
+    <dubbo:reference interface="com.sunll.systemset.api.unitAccount.UnitAccountService"
+                     id="unitAccountService" check="false" timeout="100000" />
+    <dubbo:provider timeout="100000" />
+
+</beans>

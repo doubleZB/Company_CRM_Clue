@@ -1,0 +1,44 @@
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+[v-cloak] {
+    display: none;
+}
+.cursor{
+	cursor: pointer;
+}
+.clear{
+	clear: both;
+}
+.overf{
+	overflow: hidden;
+}
+.posiR{
+	position: relative;
+}
+.layui-layer-btn{
+	text-align: center!important;
+}
+.layui-layer-page .layui-layer-btn {
+	padding-top: 10px;
+}
+
+body .layui-layer-btn > a{
+	width: 80px!important;
+	height: 35px!important;
+	text-align: center!important;
+	line-height: 35px!important;
+	border-radius: 4px!important;
+	cursor: pointer;
+}
+body .layui-layer-btn  a:nth-of-type(2){
+	background: #333333;
+	margin-left: 20px;
+	color: #fff;
+}
+body .layui-layer-btn  a:nth-of-type(1){
+	background: #fe641c!important;
+}

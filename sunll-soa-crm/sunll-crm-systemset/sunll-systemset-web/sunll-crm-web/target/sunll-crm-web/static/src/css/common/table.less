@@ -1,0 +1,76 @@
+.table {
+  margin: 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #fbfbfb;
+}
+
+.w120 {
+  width: 120px !important;
+}
+
+.w200 {
+  width: 200px !important;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  vertical-align: middle;
+  text-align: center;
+  border: none;
+}
+
+// -- 自定义表格
+table.table.table-custom {
+  th, td {
+    vertical-align: middle;
+    text-align: center;
+    height: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  thead {
+    th {
+      font-weight: normal;
+      .dropdown-toggle {
+        color: #fff;
+      }
+    }
+    .none-tr td {
+      opacity: 0;
+    }
+  }
+  tbody td {
+    border-bottom: 1px solid #f6f6f6;
+    span {
+      cursor: pointer;
+    }
+  }
+}
+
+.table-blue-bg {
+  thead {
+    th {
+      background-color: #2885ec !important;
+      color: #fff !important;
+    }
+  }
+}
+
+.table-gray-bg {
+  thead {
+    th {
+      background-color: #fafafa !important;
+      border-bottom: 1px solid #f6f6f6 !important;
+      color: #333 !important;
+    }
+  }
+}
+
+table#operate-table {
+  width: 100% !important;
+}

@@ -1,0 +1,220 @@
+//-- 动画速度
+.animated-fast {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
+// -- layer
+.layui-layer-title {
+  background-color: #36445f !important;
+  text-align: center;
+  color: #fff !important;
+}
+
+//--todo: 重定义公共样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei";
+}
+
+@bgColor: #f2f2f2;
+@main-blue: #2885ec;
+
+body {
+  background-color: @bgColor;
+}
+
+.border-none {
+  border: none;
+}
+
+.btn-primary.disabled,
+.btn-primary.disabled:hover,
+.btn-primary.disabled:focus,
+.btn-primary.disabled:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled],
+.btn-primary[disabled]:hover,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled]:active,
+.btn-primary.active[disabled],
+fieldset[disabled] .btn-primary,
+fieldset[disabled] .btn-primary:hover,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary:active,
+fieldset[disabled] .btn-primary.active,
+.landing-page .btn-primary.disabled,
+.landing-page .btn-primary.disabled:hover,
+.landing-page .btn-primary.disabled:focus,
+.landing-page .btn-primary.disabled:active,
+.landing-page .btn-primary.disabled.active,
+.landing-page .btn-primary[disabled],
+.landing-page .btn-primary[disabled]:hover,
+.landing-page .btn-primary[disabled]:focus,
+.landing-page .btn-primary[disabled]:active,
+.landing-page .btn-primary.active[disabled],
+.landing-page fieldset[disabled] .btn-primary,
+.landing-page fieldset[disabled] .btn-primary:hover,
+.landing-page fieldset[disabled] .btn-primary:focus,
+.landing-page fieldset[disabled] .btn-primary:active,
+.landing-page fieldset[disabled] .btn-primary.active {
+  background-color: rgba(40, 133, 236, .0);
+  border-color: rgba(40, 133, 236, .7);
+  color: rgba(40, 133, 236, .7) !important;
+}
+
+.margin-none {
+  margin: 0;
+}
+
+.po-rela {
+  position: relative;
+}
+
+.po-abso {
+  position: absolute;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.h100 {
+  height: 100%;
+}
+
+//-- 外链iframe
+.wrap {
+  height: 100%;
+}
+
+.w90 {
+  width: 90px !important;
+}
+
+//----- 重定义样式
+.gray-bg, .bg-muted {
+  background-color: @bgColor;
+}
+
+.b-radio-3 {
+  border-radius: 3px !important;
+}
+
+.form-control, .single-line {
+  border-radius: 3px;
+}
+
+label {
+  color: #333;
+}
+
+//面板头部
+.ibox-title {
+  border: none;
+  h5 {
+    font-size: 18px;
+    color: #222;
+    margin-top: 8px;
+  }
+}
+
+.ibox-content {
+  padding: 15px;
+}
+
+textarea.form-control {
+  resize: none !important;
+}
+
+//下拉列表
+select.form-control {
+  display: inline-block;
+  width: 120px;
+}
+
+select.input-sm.form-control {
+  padding-top: 4px;
+}
+
+//-- checkbox,radio
+input[type=checkbox]:focus, input[type=checkbox]:active, input[type=checkbox]:hover, input[type=checkbox]:link,
+input[type=radio]:focus, input[type=radio]:active, input[type=radio]:hover, input[type=radio]:link {
+  outline: none;
+}
+
+input[type=checkbox], input[type=radio] {
+  margin: 0;
+}
+
+@checkbox-sm: 16px;
+input[type=checkbox] {
+  display: inline-block;
+  vertical-align: middle;
+  width: @checkbox-sm;
+  height: @checkbox-sm;
+  -webkit-appearance: none;
+  background-image: transparent;
+  margin-top: -3px;
+  margin-right: 3px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input[type=checkbox]:after {
+  content: "";
+  display: inline-block;
+  width: @checkbox-sm;
+  height: @checkbox-sm;
+  background-image: url(../images/icon/select.png);
+  background-size: 100% 100%;
+  border: 0;
+  background-color: transparent;
+}
+
+input[type=checkbox]:checked:after {
+  background-image: url(../images/icon/select-a.png);
+}
+
+input[type=checkbox].checkboxAll:after {
+  background-image: url(../images/icon/select-all.png);
+}
+
+input[type=checkbox].checkboxAll:checked:after {
+  background-image: url(../images/icon/select-all-a.png);
+}
+
+input[type=radio] {
+  display: inline-block;
+  vertical-align: middle;
+  width: @checkbox-sm;
+  height: @checkbox-sm;
+  -webkit-appearance: none;
+  background-image: transparent;
+  margin-top: -3px;
+  margin-right: 3px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input[type=radio]:after {
+  content: "";
+  display: inline-block;
+  width: @checkbox-sm;
+  height: @checkbox-sm;
+  background-image: url(../images/icon/radio.png);
+  background-size: 100% 100%;
+  border: 0;
+  background-color: transparent;
+}
+
+input[type=radio]:checked:after {
+  background-image: url(../images/icon/radio-a.png);
+}
+
